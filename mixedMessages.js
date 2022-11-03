@@ -20,3 +20,19 @@ console.log(randomVerb);
 console.log(randomAdverb);
 console.log(randomAdjective);
 */
+
+let numberToWord = () => {
+    let num = Math.floor(Math.random() * 4);
+
+    if (num === 0) {
+        console.log(randomNoun);
+    } else if (num === 1) {
+        console.log(randomVerb);
+    } else if (num === 2) {
+        console.log(randomAdverb);
+    } else if (num === 3) {
+        console.log(randomAdjective);
+    }
+};
+
+numberToWord() * 2;
