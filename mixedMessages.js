@@ -29,22 +29,23 @@ console.log(randomING)
 */
 
 
-for (let i = 0; i < 5; i++) {
-    //random word generator
-    let numberToWord = () => {
-        let num = Math.floor(Math.random() * 5);
+//random word generator
+let numberToWord = () => {
+    let num = Math.floor(Math.random() * 5);
 
-        if (num === 0) {
-            console.log(randomNoun);
-        } else if (num === 1) {
-            console.log(randomVerb);
-        } else if (num === 2) {
-            console.log(randomAdverb);
-        } else if (num === 3) {
-            console.log(randomAdjective);
-        } else if (num === 4) {
-            console.log(randomING);
-        }
-    };
+    if (num === 0) {
+        console.log(randomNoun);
+    } else if (num === 1) {
+        console.log(randomVerb);
+    } else if (num === 2) {
+        console.log(randomAdverb);
+    } else if (num === 3) {
+        console.log(randomAdjective);
+    } else if (num === 4) {
+        console.log(randomING);
+    }
+};
+
+for (let i = 0; i < 5; i++) {
     numberToWord()
 ;}
