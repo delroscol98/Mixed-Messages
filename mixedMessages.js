@@ -1,4 +1,4 @@
-//Mixed Messages Project is a an Ad-Lib Game where the computer will randomly choose inputs for the nouns, verbs, adverbs, adjectives
+//Mixed Messages Project is a random, non-sensical message generator
 
 
 //Word containers
@@ -9,43 +9,45 @@ let adverbs = ['hungrily', 'quickly', 'sporadically', 'lustfully', 'engagingly',
 let adjectives = ['happy', 'sad', 'depressed', 'rainbow colored', 'smelly', 'fantastic', 'bizzare', 'outlandish', 'queer', 'vigorous', 'unyielding', 'bashful', 'borish', 'malnourished', 'sexy', 'attractive'];
 let INGwords = ['running', 'fanning', 'leaping', 'harping', 'smelling', 'farting', 'watching', 'judging', 'viewing', 'lighting', 'staring', 'stalking', 'playing', 'cuddling', 'flexing', 'startling', 'growing']
 
-//variables for random words
-randomNoun = nouns[Math.floor(Math.random() * (nouns.length - 1))]
-randomPronoun = pronouns[Math.floor(Math.random() * pronouns.length - 1)]
-randomVerb = verbs[Math.floor(Math.random() * (verbs.length - 1))]
-randomAdverb = adverbs[Math.floor(Math.random() * (adverbs.length - 1))]
-randomAdjective = adjectives[Math.floor(Math.random() * (adjectives.length - 1))]
-randomING = INGwords[Math.floor(Math.random() * (INGwords.length - 1))]
-
-
-//tests for random words
+//access to random words
 /*
-console.log(randomNoun);
-console.log(randomPronoun);
-console.log(randomVerb);
-console.log(randomAdverb);
-console.log(randomAdjective);
-console.log(randomING)
+nouns[Math.floor(Math.random() * (nouns.length - 1))]
+pronouns[Math.floor(Math.random() * (pronouns.length - 1))]
+verbs[Math.floor(Math.random() * (verbs.length - 1))]
+adverbs[Math.floor(Math.random() * (adverbs.length - 1))]
+adjectives[Math.floor(Math.random() * (adjectives.length - 1))]
+INGwords[Math.floor(Math.random() * (INGwords.length - 1))]
 */
 
-
-//random word generator
-let numberToWord = () => {
-    let num = Math.floor(Math.random() * 5);
+//function that attaches numbers to words
+const numberToWord = () => {
+    let num = Math.floor(Math.random() * 6)
 
     if (num === 0) {
-        console.log(randomNoun);
+        return (nouns[Math.floor(Math.random() * (nouns.length - 1))])
     } else if (num === 1) {
-        console.log(randomVerb);
+        return (pronouns[Math.floor(Math.random() * (pronouns.length - 1))])
     } else if (num === 2) {
-        console.log(randomAdverb);
+        return (verbs[Math.floor(Math.random() * (verbs.length - 1))])
     } else if (num === 3) {
-        console.log(randomAdjective);
+        return (adverbs[Math.floor(Math.random() * (adverbs.length - 1))])
     } else if (num === 4) {
-        console.log(randomING);
+        return (adjectives[Math.floor(Math.random() * (adjectives.length - 1))])
+    } else if (num === 5) {
+        return (INGwords[Math.floor(Math.random() * (INGwords.length - 1))])
     }
-};
+}
 
-for (let i = 0; i < 5; i++) {
-    numberToWord()
-;}
+//function that puts the random words into an array and returns a string of 100 words
+const randomWords = () => {
+    mixedArr = [];
+
+    for (let i = 0; i < 100; i++) {
+        mixedArr.push(numberToWord())
+    }
+
+    return mixedArr.join(' ');
+
+}
+
+console.log(randomWords())
